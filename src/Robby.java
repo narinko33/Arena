@@ -12,13 +12,34 @@ public class Robby {
 			int select = s.nextInt();
 			switch(select) {
 			case 1:
-				
+				break;
 			case 2:
-				
+				while(true) {System.out.println("いらっしゃい。見てく？");
+				System.out.print("1:見る 2:出る");
+				int select2 = s.nextInt();
+				switch(select2) {
+				case 1:
+					w.viewWepon(p);
+//					System.out.println("いるかい？");
+//					System.out.print("1:いる 2:いらないお");
+//					int select3 = s.nextInt();
+//					switch(select3) {
+//					case 1:
+//						System.out.println("まいど！");
+//						p.wepon = w.viewWepon;
+//					}
+					break;
+				case 2:
+					System.out.println("またな。");
+				continue;}
+				}
 			case 3:
-				
+				p.displayStatus();
+				w.displayWepon();
+				a.displayArmor();
+				break;
 			case 4:
-				
+				return;
 			
 			}
 			
