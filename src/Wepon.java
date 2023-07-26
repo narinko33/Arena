@@ -52,7 +52,7 @@ public class Wepon extends Item {
 			str = 900;
 			price = 3000;
 		}else if(p.level <= 50) {
-			name = ("ストレス");
+			name = ("増税");
 			str = 3000;
 			price = 5000;
 		}

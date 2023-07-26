@@ -3,6 +3,7 @@ import java.util.Scanner;
 public class Robby {
 
 	public static void main(String[] args) {
+
 		Scanner s = new Scanner(System.in);
 		Wepon w = new Wepon("ひのきのぼう", 5, 0);
 		Armor a = new Armor("Tシャツ", 2, 0);
@@ -12,6 +13,9 @@ public class Robby {
 			int select = s.nextInt();
 			switch (select) {
 			case 1:
+				Npc n = new Npc();
+				n.npcStatus(p);
+				n.npcDisplay();
 				break;
 			case 2:
 				while (true) {
@@ -40,7 +44,7 @@ public class Robby {
 						}
 						break;
 					case 2:
-						a.viewArmor(p);
+						Armor armor = a.viewArmor(p);
 						System.out.println("いるかい？");
 						System.out.print("1:いる 2:いらないお");
 						int select4 = s.nextInt();
@@ -48,7 +52,7 @@ public class Robby {
 						case 1:
 							if (p.money >= a.price) {
 								System.out.println("まいど！");
-								p.armor = a.viewArmor(p);
+								p.armor = armor;
 							} else {
 								System.out.println("この甲斐性なしが！");
 							}
@@ -59,11 +63,12 @@ public class Robby {
 						}
 					case 3:
 						System.out.println("またな。");
-						isExit =true;
+						isExit = true;
 						break;
 					}
-					if(isExit)break;
-					
+					if (isExit)
+						break;
+
 				}
 				break;
 			case 3:
