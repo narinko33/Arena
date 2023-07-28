@@ -5,8 +5,8 @@ public class Robby {
 	public static void main(String[] args) {
 
 		Scanner s = new Scanner(System.in);
-		Wepon w = new Wepon("ひのきのぼう", 5, 0);
-		Armor a = new Armor("Tシャツ", 5, 0);
+		Wepon w = new Wepon("ひのきのぼう", 10, 0);
+		Armor a = new Armor("Tシャツ", 10, 0);
 		Player p = new Player(1, 1, w, a);
 		while (true) {
 			System.out.print("1:闘技場 2:コンビニ 3:ステータス 4:終わる<<");
@@ -109,6 +109,35 @@ public class Robby {
 				break;
 			case 4:
 				return;
+				
+			case 5:
+				System.out.println("コマンドを入力してください");
+				String comand =new java.util.Scanner(System.in).nextLine();
+				if(comand.equals("8822464626")) {
+					p.level = 49;
+					p.hp = 10000;
+					p.wepon = new Wepon("", 99999, 0);
+					p.armor = new Armor("", 99999, 0);
+					p.exp = 99999;
+					p.money = 99999;
+					 String[] kurohitsugi = {"滲み出す混濁の紋章","            不遜なる狂気の器",
+								"湧きあがり・否定し 痺れ・瞬き眠りを妨げる", 
+								"爬行する鉄の王女 絶えず自壊する泥の人形", 
+								"結合せよ 反発せよ 地に満ち己の無力を知れ","破道の九十","黒","棺"};
+//					for (int i = 0; i < kurohitsugi.length; i++) {
+//						System.out.println(kurohitsugi[i]);
+//						try {
+//							Thread.sleep(2000);
+//						} catch (Exception e) {
+//							;
+//						}
+//					}
+				}else {
+					System.out.println("違います。");
+				}
+				
+				
+				
 
 			}
 			p.hp = p.maxhp;
