@@ -29,11 +29,11 @@ public class Wepon extends Item {
 			price = 50;
 		}else if(p.level <= 20) {
 			name = ("鋼の斧");
-			str = 60;
+			str = 90;
 			price = 100;
 		}else if(p.level <= 25) {
 			name = ("アサシンダガー");
-			str = 120;
+			str = 200;
 			price = 180;
 		}else if(p.level <= 30) {
 			name = ("銀の弓");
@@ -41,19 +41,19 @@ public class Wepon extends Item {
 			price = 360;
 		}else if(p.level <= 35) {
 			name = ("王の財宝");
-			str = 320;
+			str = 450;
 			price = 720;
 		}else if(p.level >= 40) {
 			name = ("約束されし勝利の剣");
-			str = 400;
+			str = 600;
 			price = 1500;
 		}else if(p.level <= 45) {
 			name = ("飛鳥文化アタック");
-			str = 500;
+			str = 1000;
 			price = 3000;
 		}else if(p.level <= 50) {
 			name = ("闇の宝玉");
-			str = 700;
+			str = 3000;
 			price = 5000;
 		}
 		Wepon view = new Wepon(name,str,price);
