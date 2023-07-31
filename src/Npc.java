@@ -95,4 +95,13 @@ public class Npc extends Gladiator {
 		p.hp -= dmg;
 		return p.hp <= 0;
 	}
+	public boolean attack(Player p) {
+		System.out.println("NPCの攻撃");
+		int dmg = this.str - p.armor.dex;
+		if (dmg < 0)
+			dmg = 0;
+		System.out.println(dmg + "のダメージを与えた。");
+		p.hp -= dmg;
+		return p.hp <= 0;
+	}
 }

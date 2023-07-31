@@ -1,3 +1,5 @@
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Scanner;
 
 public class Robby {
@@ -16,27 +18,29 @@ public class Robby {
 				System.out.print("1:戦う 2:やめる <<");
 				switch (select()) {
 				case 1:
-					while (true) {
-						if (p.level >= n.level) {
-							if (p.attack(n) || n.attack(p, a)) {
-								break;
-							}
-						} else {
-							if (n.attack(p, a) || p.attack(n)) {
-								break;
-							}
-						}
-
-					}
-					if (p.hp > 0) {
-						System.out.println("NPCを倒した。");
-						p.levelUp(n.exp);
-						p.inWallet(n.money);
-						break;
-					} else {
-						System.out.println("あなたは負けてしまった。");
-						break;
-					}
+					battle(p,n);
+					break;
+//					while (true) {
+//						if (p.level >= n.level) {
+//							if (p.attack(n) || n.attack(p, a)) {
+//								break;
+//							}
+//						} else {
+//							if (n.attack(p, a) || p.attack(n)) {
+//								break;
+//							}
+//						}
+//
+//					}
+//					if (p.hp > 0) {
+//						System.out.println("NPCを倒した。");
+//						p.levelUp(n.exp);
+//						p.inWallet(n.money);
+//						break;
+//					} else {
+//						System.out.println("あなたは負けてしまった。");
+//						break;
+//					}
 
 				case 2:
 					break;
@@ -112,18 +116,46 @@ public class Robby {
 
 	}
 
-//	public static void battle(Player p, Npc n, Armor a) {
-//		while (true) {
-//			if (p.level >= n.level) {
-//				if (p.attack(n) || n.attack(p, a)) {
-//					break;
-//				}
-//			} else {
-//				if (n.attack(p, a) || p.attack(n)) {
-//					break;
-//				}
-//			}
-//
+	public static void battle(Player p, Npc n) {
+		List<Gladiator> gList = new ArrayList<Gladiator>();
+		if (p.level >= n.level) {
+			gList.add(p);
+			gList.add(n);
+		} else {
+			gList.add(n);
+			gList.add(p);
+		}
+		while (true) {
+			//			if (p.level >= n.level) {
+			//				if (p.attack(n) || n.attack(p, a)) {
+			//					break;
+			//				}
+			//			} else {
+			//				if (n.attack(p, a) || p.attack(n)) {
+			//					break;
+			//				}
+			//			}
+			for (int i = 0; i < gList.size(); i++) {
+				Gladiator g = gList.get(i);
+				if (g instanceof Player) {
+					Player player = (Player) g;
+					Npc enemy = (Npc) gList.get((i + 1) % gList.size());
+					if(player.attack(enemy)) {
+						System.out.println("NPCを倒した。");
+						p.levelUp(n.exp);
+						p.inWallet(n.money);
+						return;
+					}
+				} else {
+					Npc enemy = (Npc) g;
+					Player player = (Player) gList.get((i + 1) % gList.size());
+					if(enemy.attack(player)) {
+						System.out.println("あなたは負けてしまった。");
+						return;
+					}
+				}
+			}
+
 //			if (p.hp > 0) {
 //				System.out.println("NPCを倒した。");
 //				p.levelUp(n.exp);
@@ -133,7 +165,7 @@ public class Robby {
 //				System.out.println("あなたは負けてしまった。");
 //				break;
 //			}
-//		}
-//	}
+		}
+	}
 
 }
