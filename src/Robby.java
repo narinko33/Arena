@@ -9,7 +9,6 @@ public class Robby {
 		Player p = new Player(1, 1, w, a);
 		while (true) {
 			System.out.print("1:闘技場 2:コンビニ 3:ステータス 4:終わる<<");
-
 			switch (select()) {
 			case 1:
 				Npc n = new Npc();
@@ -114,12 +113,14 @@ public class Robby {
 					p.armor = new Armor("", 99999, 0);
 					p.exp = 99999;
 					p.money = 99999;
-					String[] kurohitsugi = { "                滲み出す混濁の紋章", "                 不遜なる狂気の器",
+					String[] kurohitsugi = { "                滲み出す混濁の紋章",
+							"                 不遜なる狂気の器",
 							"      湧きあがり・否定し 痺れ・瞬き眠りを妨げる",
 							"      爬行する鉄の王女 絶えず自壊する泥の人形",
 							"      結合せよ 反発せよ 地に満ち己の無力を知れ",
-							"                     破道の九十", "                        黒", "                        棺", "",
-							"" };
+							"                     破道の九十",
+							"                        黒", "                        棺",
+							"", "" };
 					for (int i = 0; i < kurohitsugi.length; i++) {
 						System.out.println(kurohitsugi[i]);
 						try {
@@ -130,9 +131,13 @@ public class Robby {
 					}
 				} else {
 					System.out.println("違います。");
-				}
 
+				}
+				break;
+			default:
+				System.out.println("選択肢から選んでください");
 			}
+
 			p.hp = p.maxhp;
 		}
 	}

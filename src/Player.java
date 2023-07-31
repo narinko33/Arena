@@ -2,7 +2,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 public class Player extends Gladiator {
-	 int maxhp = 10;
+	int maxhp = 10;
 	Wepon wepon;
 	Armor armor;
 
@@ -82,23 +82,23 @@ public class Player extends Gladiator {
 			maxhp += 10;
 			System.out.println("最大HPが10増えた");
 		}
-		if(this.level == 10) {
+		if (this.level == 10) {
 			System.out.println("レベル10ボーナス！");
 			System.out.println("最大HPが50増えた！");
 			maxhp += 50;
-		}else if(this.level == 20) {
+		} else if (this.level == 20) {
 			System.out.println("レベル20ボーナス！");
 			System.out.println("最大HPが100増えた！");
 			maxhp += 100;
-		}else if(this.level == 30) {
+		} else if (this.level == 30) {
 			System.out.println("レベル30ボーナス！");
 			System.out.println("最大HPが200増えた！");
 			maxhp += 200;
-		}else if(this.level == 40) {
+		} else if (this.level == 40) {
 			System.out.println("レベル40ボーナス！");
 			System.out.println("最大HPが500増えた！");
 			maxhp += 500;
-		}else if(this.level == 50) {
+		} else if (this.level == 50) {
 			System.out.println("レベル50ボーナス！");
 			System.out.println("最大HPが1000増えた！");
 			maxhp += 1000;
