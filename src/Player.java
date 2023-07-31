@@ -113,7 +113,7 @@ public class Player extends Gladiator {
 	}
 
 	public boolean attack(Npc n) {
-		System.out.println("プレイヤーの攻撃");
+		System.out.println("あなたの攻撃");
 		int dmg = wepon.str - n.dex;
 		if (dmg < 0)
 			dmg = 0;

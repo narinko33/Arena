@@ -49,43 +49,10 @@ public class Robby {
 					System.out.print("1:武器 2:防具 3:出る<<");
 					switch (select()) {
 					case 1:
-						Wepon wepon = w.viewWepon(p);
-						System.out.println("いるかい？");
-						System.out.print("1:いる 2:いらない<<");
-						switch (select()) {
-						case 1:
-							if (p.money >= wepon.price) {
-								System.out.println("まいど！");
-								p.money -= wepon.price;
-								p.wepon = wepon;
-
-							} else {
-								System.out.println("この甲斐性なしが！");
-							}
-							break;
-						case 2:
-							System.out.println("見るだけはタダだしな");
-							break;
-						}
+						Shop.weponShop(p, w);
 						break;
 					case 2:
-						Armor armor = a.viewArmor(p);
-						System.out.println("いるかい？");
-						System.out.print("1:いる 2:いらない<<");
-						switch (select()) {
-						case 1:
-							if (p.money >= armor.price) {
-								System.out.println("まいど！");
-								p.money -= armor.price;
-								p.armor = armor;
-							} else {
-								System.out.println("この甲斐性なしが！");
-							}
-							break;
-						case 2:
-							System.out.println("見るだけはタダだしな");
-							break;
-						}
+						Shop.armorShop(p, a);
 						break;
 					case 3:
 						System.out.println("またな。");
@@ -113,16 +80,11 @@ public class Robby {
 					p.armor = new Armor("", 99999, 0);
 					p.exp = 99999;
 					p.money = 99999;
-					String[] kurohitsugi = { "                滲み出す混濁の紋章",
-							"                 不遜なる狂気の器",
-							"      湧きあがり・否定し 痺れ・瞬き眠りを妨げる",
-							"      爬行する鉄の王女 絶えず自壊する泥の人形",
-							"      結合せよ 反発せよ 地に満ち己の無力を知れ",
-							"                     破道の九十",
-							"                        黒", "                        棺",
-							"", "" };
-					for (int i = 0; i < kurohitsugi.length; i++) {
-						System.out.println(kurohitsugi[i]);
+					String[] kansou = { "このコマンドが思いつくということはあなたはゲーマーですね。", "私がこのコマンドを初めて入力したのはゲームボーイの遊戯王が最初でした。",
+							"ではそういうことになるのでステータスを確認してください。", ""
+					};
+					for (int i = 0; i < kansou.length; i++) {
+						System.out.println(kansou[i]);
 						try {
 							Thread.sleep(2000);
 						} catch (Exception e) {
@@ -140,6 +102,7 @@ public class Robby {
 
 			p.hp = p.maxhp;
 		}
+
 	}
 
 	public static int select() {
@@ -148,4 +111,29 @@ public class Robby {
 		return sel;
 
 	}
+
+//	public static void battle(Player p, Npc n, Armor a) {
+//		while (true) {
+//			if (p.level >= n.level) {
+//				if (p.attack(n) || n.attack(p, a)) {
+//					break;
+//				}
+//			} else {
+//				if (n.attack(p, a) || p.attack(n)) {
+//					break;
+//				}
+//			}
+//
+//			if (p.hp > 0) {
+//				System.out.println("NPCを倒した。");
+//				p.levelUp(n.exp);
+//				p.inWallet(n.money);
+//				break;
+//			} else {
+//				System.out.println("あなたは負けてしまった。");
+//				break;
+//			}
+//		}
+//	}
+
 }
