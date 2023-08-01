@@ -117,8 +117,8 @@ public class Player extends Gladiator {
 		int dmg = wepon.str - n.dex;
 		if (dmg < 0)
 			dmg = 0;
-		System.out.println(dmg + "のダメージを与えた。");
 		n.hp -= dmg;
+		System.out.println(dmg + "のダメージを与えた。" + "NPC:HP" + n.hp);
 		return n.hp <= 0;
 
 	}

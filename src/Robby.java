@@ -6,7 +6,7 @@ public class Robby {
 
 	public static void main(String[] args) {
 
-		Wepon w = new Wepon("ひのきのぼう", 10, 0);
+		Wepon w = new Wepon("いい感じの枝", 10, 0);
 		Armor a = new Armor("Tシャツ", 10, 0);
 		Player p = new Player(1, 1, w, a);
 		while (true) {
@@ -18,30 +18,8 @@ public class Robby {
 				System.out.print("1:戦う 2:やめる <<");
 				switch (select()) {
 				case 1:
-					battle(p,n);
+					battle(p, n);
 					break;
-//					while (true) {
-//						if (p.level >= n.level) {
-//							if (p.attack(n) || n.attack(p, a)) {
-//								break;
-//							}
-//						} else {
-//							if (n.attack(p, a) || p.attack(n)) {
-//								break;
-//							}
-//						}
-//
-//					}
-//					if (p.hp > 0) {
-//						System.out.println("NPCを倒した。");
-//						p.levelUp(n.exp);
-//						p.inWallet(n.money);
-//						break;
-//					} else {
-//						System.out.println("あなたは負けてしまった。");
-//						break;
-//					}
-
 				case 2:
 					break;
 				}
@@ -65,17 +43,17 @@ public class Robby {
 					}
 					if (isExit)
 						break;
-
 				}
 				break;
 			case 3:
 				p.displayStatus();
 				break;
 			case 4:
+				System.out.println("終了します。");
+				System.out.println("ヒント:5656");
 				return;
-
-			case 5:
-				System.out.println("コマンドを入力してください");
+			case 5656:
+				System.out.println("コナミコマンドを入力してください");
 				String comand = new java.util.Scanner(System.in).nextLine();
 				if (comand.equals("8822464626")) {
 					p.level = 49;
@@ -84,13 +62,15 @@ public class Robby {
 					p.armor = new Armor("", 99999, 0);
 					p.exp = 99999;
 					p.money = 99999;
-					String[] kansou = { "このコマンドが思いつくということはあなたはゲーマーですね。", "私がこのコマンドを初めて入力したのはゲームボーイの遊戯王が最初でした。",
-							"ではそういうことになるのでステータスを確認してください。", ""
-					};
+					String[] kansou = { "このコマンドが思いつくということはあなたはゲームが大好きなんですね。",
+							"私がこのコマンドを初めて入力したのはゲームボーイの遊戯王でした。",
+							"ではそういうことになるのでステータスを確認してください。",
+							"そしてどうぞお楽しみください", "", "⊂二二二（  ＾ω＾）二二⊃ﾌﾞｰﾝ",
+							"                ﾌﾞｰﾝ⊂二二二（＾ω＾  ）二二⊃", "" };
 					for (int i = 0; i < kansou.length; i++) {
 						System.out.println(kansou[i]);
 						try {
-							Thread.sleep(2000);
+							Thread.sleep(1500);
 						} catch (Exception e) {
 							;
 						}
@@ -126,21 +106,12 @@ public class Robby {
 			gList.add(p);
 		}
 		while (true) {
-			//			if (p.level >= n.level) {
-			//				if (p.attack(n) || n.attack(p, a)) {
-			//					break;
-			//				}
-			//			} else {
-			//				if (n.attack(p, a) || p.attack(n)) {
-			//					break;
-			//				}
-			//			}
 			for (int i = 0; i < gList.size(); i++) {
 				Gladiator g = gList.get(i);
 				if (g instanceof Player) {
 					Player player = (Player) g;
 					Npc enemy = (Npc) gList.get((i + 1) % gList.size());
-					if(player.attack(enemy)) {
+					if (player.attack(enemy)) {
 						System.out.println("NPCを倒した。");
 						p.levelUp(n.exp);
 						p.inWallet(n.money);
@@ -149,23 +120,34 @@ public class Robby {
 				} else {
 					Npc enemy = (Npc) g;
 					Player player = (Player) gList.get((i + 1) % gList.size());
-					if(enemy.attack(player)) {
+					if (enemy.attack(player)) {
 						System.out.println("あなたは負けてしまった。");
 						return;
 					}
 				}
 			}
-
-//			if (p.hp > 0) {
-//				System.out.println("NPCを倒した。");
-//				p.levelUp(n.exp);
-//				p.inWallet(n.money);
-//				break;
-//			} else {
-//				System.out.println("あなたは負けてしまった。");
-//				break;
-//			}
 		}
 	}
 
 }
+//	while(true){
+//	if (p.level >= n.level) {
+//		if (p.attack(n) || n.attack(p, a)) {
+//			break;
+//		}
+//	} else {
+//		if (n.attack(p, a) || p.attack(n)) {
+//			break;
+//		}
+//	}
+//
+//}
+//if (p.hp > 0) {
+//	System.out.println("NPCを倒した。");
+//	p.levelUp(n.exp);
+//	p.inWallet(n.money);
+//	break;
+//} else {
+//	System.out.println("あなたは負けてしまった。");
+//	break;
+//}

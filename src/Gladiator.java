@@ -7,5 +7,4 @@ public abstract class Gladiator {
 	int exp;
 	int money;
 	
-	public void attack() {}
 }

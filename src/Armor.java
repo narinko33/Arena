@@ -20,7 +20,7 @@ public class Armor extends Item {
 
 		if (p.level <= 5) {
 			name = ("鉄の鎧");
-			dex = 10;
+			dex = 15;
 			price = 10;
 		} else if (p.level <= 10) {
 			name = ("鎖帷子");
@@ -32,7 +32,7 @@ public class Armor extends Item {
 			price = 120;
 		} else if (p.level <= 20) {
 			name = ("炎の衣");
-			dex = 45;
+			dex = 60;
 			price = 160;
 		} else if (p.level <= 25) {
 			name = ("アサシンマント");
@@ -40,14 +40,14 @@ public class Armor extends Item {
 			price = 250;
 		} else if (p.level <= 30) {
 			name = ("シルバーメイル");
-			dex = 120;
+			dex = 160;
 			price = 300;
 		} else if (p.level <= 35) {
-			name = ("熾天覆う七つの円環");
+			name = ("ミスリルアーマー");
 			dex = 225;
 			price = 500;
 		} else if (p.level >= 40) {
-			name = ("いまは遥か理想の城");
+			name = ("オリハルコンシールド");
 			dex = 360;
 			price = 1500;
 		} else if (p.level <= 45) {
@@ -55,7 +55,7 @@ public class Armor extends Item {
 			dex = 500;
 			price = 3000;
 		} else if (p.level <= 50) {
-			name = ("暗黒の帳");
+			name = ("プロテクション");
 			dex = 1500;
 			price = 5000;
 		}

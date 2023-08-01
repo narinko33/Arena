@@ -42,11 +42,11 @@ public class Wepon extends Item {
 			str = 240;
 			price = 360;
 		} else if (p.level <= 35) {
-			name = ("王の財宝");
+			name = ("ダマスクスアックス");
 			str = 450;
 			price = 720;
 		} else if (p.level >= 40) {
-			name = ("約束されし勝利の剣");
+			name = ("エクスカリバー");
 			str = 600;
 			price = 1500;
 		} else if (p.level <= 45) {
@@ -54,7 +54,7 @@ public class Wepon extends Item {
 			str = 1000;
 			price = 3000;
 		} else if (p.level <= 50) {
-			name = ("闇の宝玉");
+			name = ("アルテマ");
 			str = 3000;
 			price = 5000;
 		}
