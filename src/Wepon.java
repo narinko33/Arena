@@ -59,7 +59,15 @@ public class Wepon extends Item {
 			price = 5000;
 		}
 		Wepon view = new Wepon(name, str, price);
-		System.out.println("武器名:" + view.name + " STR:" + view.str + " 値段:" + view.price);
 		return view;
+	}
+
+	@Override
+	public boolean equals(Object obj) {
+		if (obj instanceof Wepon) {
+			Wepon wepon = (Wepon) obj;
+			return this.name.equals(wepon.name);
+		}
+		return false;
 	}
 }

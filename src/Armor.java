@@ -60,7 +60,14 @@ public class Armor extends Item {
 			price = 5000;
 		}
 		Armor view = new Armor(name, dex, price);
-		System.out.println("防具名:" + view.name + " DEX:" + view.dex + " 値段:" + view.price);
 		return view;
+	}
+	@Override
+	public boolean equals(Object obj) {
+		if (obj instanceof Armor) {
+			Armor armor = (Armor) obj;
+			return this.name.equals(armor.name);
+		}
+		return false;
 	}
 }
