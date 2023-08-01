@@ -29,11 +29,11 @@ public class Armor extends Item {
 		} else if (p.level <= 15) {
 			name = ("鋼の鎧");
 			dex = 40;
-			price = 120;
+			price = 50;
 		} else if (p.level <= 20) {
 			name = ("炎の衣");
 			dex = 60;
-			price = 160;
+			price = 100;
 		} else if (p.level <= 25) {
 			name = ("アサシンマント");
 			dex = 100;
@@ -62,6 +62,7 @@ public class Armor extends Item {
 		Armor view = new Armor(name, dex, price);
 		return view;
 	}
+
 	@Override
 	public boolean equals(Object obj) {
 		if (obj instanceof Armor) {

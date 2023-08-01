@@ -30,7 +30,7 @@ public class Wepon extends Item {
 			str = 45;
 			price = 50;
 		} else if (p.level <= 20) {
-			name = ("鋼の斧");
+			name = ("流水の斧");
 			str = 90;
 			price = 100;
 		} else if (p.level <= 25) {
